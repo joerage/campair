@@ -1,0 +1,4 @@
+[GET] https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&display=swap => [200] 
+[GET] http://127.0.0.1:8000/static/css/app.css => [200] OK
+[GET] https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2 => [200] 
+[GET] https://fonts.gstatic.com/s/bebasneue/v16/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2 => [200] 
