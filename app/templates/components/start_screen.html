@@ -1,25 +1,55 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
+    <section class="app-shell">
+        <div class="screen-frame">
+            <div class="hero-panel">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <div class="eyebrow">Montreal Canadiens tribute</div>
+                        <h1 class="hero-title">Bleu Blanc Rouge Bingo</h1>
+                        <p class="hero-subtitle">Turn your next icebreaker into a Bell Centre-inspired scouting report.</p>
+                        <div class="hero-divider"></div>
 
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
-            </ul>
+                        <div class="hero-notes">
+                            <article class="note-card">
+                                <span class="note-label">Mission</span>
+                                <p class="note-value">Meet people who match each square.</p>
+                            </article>
+                            <article class="note-card">
+                                <span class="note-label">Target</span>
+                                <p class="note-value">Build five in a row before the next stoppage.</p>
+                            </article>
+                            <article class="note-card">
+                                <span class="note-label">Mood</span>
+                                <p class="note-value">Heritage sweater energy, game-night swagger.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <aside class="hero-sidebar">
+                        <div class="sidebar-card">
+                            <h2 class="sidebar-title">Pregame skate</h2>
+                            <ul class="sidebar-list">
+                                <li>Find someone who fits a square on the board.</li>
+                                <li>Tap the square to mark your line change.</li>
+                                <li>Connect five for your own Centre Bell moment.</li>
+                            </ul>
+                        </div>
+
+                        <div class="hero-actions">
+                            <button
+                                hx-post="/start"
+                                hx-target="#game-container"
+                                hx-swap="outerHTML"
+                                class="primary-button">
+                                Hit the Ice
+                            </button>
+                            <div class="sidebar-card">
+                                <p class="sidebar-copy">Designed as a bold Montreal Canadiens reference without changing the core social bingo flow.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
         </div>
-
-        <button
-            hx-post="/start"
-            hx-target="#game-container"
-            hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
-        </button>
-    </div>
-</div>
+    </section>
 </div>

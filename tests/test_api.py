@@ -16,9 +16,9 @@ class TestHomePage:
 
     def test_home_contains_start_screen(self, client: TestClient):
         response = client.get("/")
-        assert "Soc Ops" in response.text
-        assert "Start Game" in response.text
-        assert "How to play" in response.text
+        assert "Montreal Canadiens tribute" in response.text
+        assert "Hit the Ice" in response.text
+        assert "Pregame skate" in response.text
 
     def test_home_sets_session_cookie(self, client: TestClient):
         response = client.get("/")
@@ -27,18 +27,16 @@ class TestHomePage:
 
 class TestStartGame:
     def test_start_returns_game_board(self, client: TestClient):
-        # First visit to get session
         client.get("/")
         response = client.post("/start")
         assert response.status_code == 200
         assert "FREE SPACE" in response.text
-        assert "← Back" in response.text
+        assert "Locker Room" in response.text
 
     def test_board_has_25_squares(self, client: TestClient):
         client.get("/")
         response = client.post("/start")
-        # Count the toggle buttons (squares with hx-post="/toggle/")
-        assert response.text.count('hx-post="/toggle/') == 24  # 24 + 1 free space
+        assert response.text.count('hx-post="/toggle/') == 24
 
 
 class TestToggleSquare:
@@ -47,7 +45,6 @@ class TestToggleSquare:
         client.post("/start")
         response = client.post("/toggle/0")
         assert response.status_code == 200
-        # The response should contain the game screen with a marked square
         assert "FREE SPACE" in response.text
 
 
@@ -57,8 +54,8 @@ class TestResetGame:
         client.post("/start")
         response = client.post("/reset")
         assert response.status_code == 200
-        assert "Start Game" in response.text
-        assert "How to play" in response.text
+        assert "Hit the Ice" in response.text
+        assert "Pregame skate" in response.text
 
 
 class TestDismissModal:
